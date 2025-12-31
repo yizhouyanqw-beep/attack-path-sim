@@ -1,0 +1,2 @@
+[console_scripts]
+attack-path-sim = attack_path_sim.cli:main

@@ -1,0 +1,34 @@
+assets:
+  - name: Prototype Device IP
+    value: 0.9
+  - name: Shipment Tracking Data
+    value: 0.6
+
+nodes:
+  warehouse_storage:
+    description: Prototype stored in warehouse
+  internal_api:
+    description: Internal API for prototype tracking
+  engineer_workstation:
+    description: Engineer accesses device info
+  exfiltration:
+    description: IP is exfiltrated (goal state)
+
+edges:
+  - from: warehouse_storage
+    to: internal_api
+    action: badge_spoof
+    prob: 0.10
+    cost: 0.30
+
+  - from: internal_api
+    to: engineer_workstation
+    action: api_key_leak
+    prob: 0.05
+    cost: 0.20
+
+  - from: engineer_workstation
+    to: exfiltration
+    action: data_copy
+    prob: 0.25
+    cost: 0.15
