@@ -1,4 +1,4 @@
-# Attack-Path-Sim — README v0
+# Attack-Path-Sim — README
 *A Lightweight Attack Path Simulation Engine for Prototype Device & Supply-Chain Safety*
 
 `attack-path-sim` is a small Python package for simulating **adversarial attack paths** across a process/system graph (e.g., prototype-device lifecycle, internal tooling, shipment handling, warehouse access, privileged APIs).
